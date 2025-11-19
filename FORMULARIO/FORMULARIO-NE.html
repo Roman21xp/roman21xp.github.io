@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <fieldset>
+            <legend><b>Datos Personales</b></legend>
+            <td>
+                <form action="http://ncoge.com/phps/formulario.php" method="get">
+                        <label for="username"><b>Nombre</b></label>
+                        <input type="text" id="username" name="username">
+                        <br>
+                        <br>
+                        <label for="lastname"><b>Apellido</b></label>
+                        <input type="text" name="lastname">
+                        <br>
+                        <br>
+                        <label for="correo" type="text"><b>Correo</b></label>
+                        <input type="email" name="correo">
+                        <br>
+                        <br>
+                </form>
+            </td>
+            <tr>
+                <td>
+                    <label for="hobbies" valign="top"><b>Hobbies</b></label>
+                   <textarea name="hobbies" rows="10" cols="50"></textarea>
+                </td>
+            </tr>
+            </fieldset>
+        </tr>
+    </table>
+</body>
+</html>

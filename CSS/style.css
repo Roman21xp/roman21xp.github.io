@@ -1,0 +1,147 @@
+.fondo {
+    background-color: #1c1c1c
+;
+}
+
+h1 {
+    color: black;
+    text-align: center;
+    font-weight: bolder;
+    font-size: xx-large;
+    background-color: goldenrod;
+    padding: 10px;
+    width: auto;
+    border-radius: 50px;
+    box-shadow: 10px 10px 15px gray;
+}
+
+
+p {
+    color: black;
+    font-size: large;
+    font-weight: 800;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: goldenrod;
+    padding: 20px;
+    width: fit-content;
+    border-radius: 30px;
+    box-shadow: 5px 10px 15px grey;
+}
+
+
+.primero, .segundo, .tercero {
+    color: black;
+    font-size: medium;
+    font-weight: 800;
+    background-color: goldenrod;
+    padding: 15px;
+    width: fit-content;
+    border-radius: 50px;
+    box-shadow: 5px 10px 15px grey;
+}
+
+div {
+    margin: 20px;
+    padding: 20px;
+h2 {
+    color: black;
+    font-weight: bolder;
+    font-size: 50px;
+    background-color: goldenrod;
+    padding: 30px;
+    width: auto;
+    border-radius: 50px;
+    box-shadow: 10px 10px 15px gray;
+        font-style: oblique;
+
+}
+.villanos {
+    background-color: #1c1c1c;
+    padding: 100px;
+    box-shadow: 5px 5px 10px lightgrey;
+    border-radius: 60px;
+}
+
+.joker {
+    a{
+        color: darkred;
+    }
+
+    color: darkgray;
+    background-color: green;
+    font-weight: bold;
+    padding: 10px;
+    width: auto;
+    border-radius: 30px;
+    box-shadow: 5px 5px 10px purple;
+        font-style: oblique;
+
+
+}
+
+.bane {
+    a{
+        color: black;
+    }
+
+    color: darkgray;
+    background-color: orangered;
+    padding: 10px;
+    width: auto;
+    border-radius: 30px;
+    box-shadow: 5px 5px 10px white;
+    font-weight: bold;
+    font-style: oblique;
+
+
+}
+
+.H-venenosa {
+    a{
+        color: pink;
+    }
+
+    color: darkgray;
+    background-color: darkgreen;
+    padding: 10px;
+    width: auto;
+    border-radius: 30px;
+    box-shadow: 5px 5px 10px lightgreen;
+    font-weight: bold;
+        font-style: oblique;
+        
+
+}
+
+.pinguino {
+    a{
+        color: goldenrod;
+    }
+
+    color: darkgray;
+    background-color: lightgray;
+    padding: 10px;
+    width: auto;
+    border-radius: 30px;
+    box-shadow: 5px 5px 10px black;
+    font-weight: bold;
+    font-style: oblique;
+}
+
+.Dos-caras {
+    a{
+        color: green;
+    }
+    
+    color: darkgray;
+    background-color: purple;
+    font-weight: bold;
+    padding: 10px;
+    width: auto;
+    border-radius: 30px;
+    box-shadow: 5px 5px 10px orangered;
+    font-weight: bold;
+        font-style: oblique;
+
+}
+}

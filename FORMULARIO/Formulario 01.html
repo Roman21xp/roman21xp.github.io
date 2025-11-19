@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+</head>
+<body>
+    <h1>Formulario</h1>
+    <form action="http://ncoge.com/phps/formulario.php" method="get">
+        <label for="Username">Nombre de usuario:</label>
+        <input type="text" name="Username">
+        <br>
+        <label for="password">Contraseña:</label>
+        <input type="password" name="password">
+        <input name="puesto_directivo" type="checkbox" value="direccion">Direccion
+        <input name="puesto_tecnico" type="checkbox" value="tecnico">Tecnico
+        <input name="puesto_empleado" type="checkbox" value="empleado">Empleado
+        <br>
+        <table>
+            <tr>
+                <td valign="top">Comentarios</td>
+                <td><textarea name="comentarios" rows="4" cols="50"></textarea></td>
+            </tr>
+        </table>
+        
+        <br>
+        Sexo:<br>
+        <input type="radio" name="sexo" value="hombre" checked="checked"> Hombre        
+       <input type="radio" name="sexo" value="mujer"> Mujer
+         <input type="radio" name="sexo" value="alien"> Alien
+        <br>Bebida favorita:<br> 
+        <input type="radio" name="bebidas" value="cafe con leche" checked="checked"> Cafe con leche
+        <input type="radio" name="bebidas" value="colacao" checked="checked"> Colacao
+        <input type="radio" name="bebidas" value="infusion" checked="checked"> Infusion
+        <input type="hidden" name="MAX_FILE_SIZE" value="30000">
+        <br>Fichero Adjunto: 
+        <input type="file" name="adjunto">
+        <input type="submit" value="enviar">
+        <input type="button" name="guardar" value="guardar cambios">
+    </form>
+</body><label for="comentarios">Comentarios:</label> 
+</html>
