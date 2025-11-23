@@ -2,6 +2,34 @@ body {
     background-size: cover;
 }
 
+img {
+    width: 70%;
+    height: fit-content;
+    border-radius: 100%;
+}
+
 h1 {
-    color:blanchedalmond
+    font-size: 40px;
+    color:blanchedalmond;
+    padding: 100px 50px 110px;
+    text-align: center;
+}
+
+h3 {
+    font-size: 25px;
+    color: blanchedalmond;
+    text-align: justify;
+}
+
+P {
+    font-size: 25px;
+    color: blanchedalmond;
+    text-align: justify;
+
+}
+
+a {
+    font-size: 18px;
+    color: blanchedalmond;
+    text-align: justify;
 }
