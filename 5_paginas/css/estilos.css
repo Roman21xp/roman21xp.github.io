@@ -1,21 +1,33 @@
 body {
     background-image: url(../images/fondo.jpg);
-    
+    text-align: center;
+    background-size: cover;
 }
 
 h1 {
-
+    background-color: lightgrey;
+    color: white;
+    border-left: 20px solid red;
+    padding: 10px;
+    margin-bottom: 50px;
+    font-family: Bebas Neue;
+    font-size: 40px;
 }
 
 img {
-    
+    border: 5px solid black;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px black;
 }
 
 ul {
-
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 li {
-
+    border: 1px solid black;
+    display: inline-block;
+    padding:3px;
 }
 
