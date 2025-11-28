@@ -2,7 +2,7 @@
 }
 
 body {
-  background-color: #F1F0FF;
+    background-color: #F1F0FF;
 }
 
 h1 {
@@ -31,15 +31,13 @@ p:first-child {
     background-image: url(../images/fondoParrafo.png);
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
-    box-shadow: 5px 5px 10px gray;
-
-    
+    box-shadow: 5px 5px 10px gray;  
 }
 p:nth-child(2){
     background-color: #C3C3E5;
     border: 5px dashed black;
     box-shadow: 5px 5px 10px gray;
-  }
+}
 
 p:last-child{
     background-color: #C3C3E5;
@@ -49,21 +47,23 @@ p:last-child{
     box-shadow: 5px 5px 10px gray;
 }
 #header {
-  background-color:#C3C3E5;
-  border-bottom: 5px solid black;
-  margin: 5px;
+    background-color:#C3C3E5;
+    border-bottom: 5px solid black;
+    margin: 5px;
 }
 
 #content{
-
+    
 }
 
 #text {
-  text-indent: 40px;
+    text-indent: 40px;
+    width: 90%;
+    margin: 0 auto;
 }
 
 #text p {
-  
+    font-size: 14px;
 }
 
 #text p:first-child {
@@ -75,20 +75,21 @@ p:last-child{
 }
 
 #menu {
-
+    padding: 15px;
 }
 
 #menu a{
-
+    color: black;
+    text-decoration: none;
 }
 
 
 #menu li{
-
+    font-size: 12px;
 }
 
 #menu li a:hover{
-
+    color: red;
 }
 
 #footer{
@@ -103,12 +104,23 @@ p:last-child{
 }
 
 #footer a:hover{
-
+    color: red;
 }
+
+
 #image {
     text-align: right;
+    margin-right: 60px;
 }
 
 @media all and (max-width: 500px) {
-
+    img{
+        border: red 5px solid;
+        margin-right: 0px;
+        margin-left: 0px;
+        width: 90%;
+    }
+    #image{
+        text-align: center;
+    }
 }
