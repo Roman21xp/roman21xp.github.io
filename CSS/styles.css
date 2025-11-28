@@ -6,6 +6,8 @@ img {
     width: 70%;
     height: fit-content;
     border-radius: 100%;
+    margin-left: 20px;
+    box-shadow: 5px 5px 5px white;
 }
 
 h1 {
@@ -24,12 +26,48 @@ h3 {
 P {
     font-size: 25px;
     color: blanchedalmond;
-    text-align: justify;
-
+    text-align: justify;    
 }
 
 a {
     font-size: 18px;
     color: blanchedalmond;
     text-align: justify;
+    text-decoration: none;
+}
+
+#enlaces{
+        text-align: center;
+        display: inline-block;
+        
+    }
+
+a:hover{
+    color: lightblue;
+}
+
+img:hover{
+    border: lightblue 5px  solid;
+}
+
+@media all and (max-width: 500px) {
+    #todo{
+        margin: 0px;
+        padding: 0px;
+    }
+
+    img{
+        border: 2px solid lightblue;
+        width: 100px
+    }
+
+    h1,p,a{
+        font-size: 18px;
+        text-align: center;
+    }
+
+    #enlaces{
+        text-align: center;
+        display: inline;
+    }
 }
