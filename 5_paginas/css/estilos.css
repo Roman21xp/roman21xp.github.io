@@ -18,6 +18,7 @@ img {
     border: 5px solid black;
     border-radius: 10px;
     box-shadow: 2px 2px 2px black;
+    height: 300px;
 }
 
 ul {
