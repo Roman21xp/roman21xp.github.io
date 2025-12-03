@@ -1,0 +1,43 @@
+body {
+    background-image: url(../images/fondo.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    background-attachment: fixed;
+    font-size: 900px;
+ }
+
+h1 {
+    text-align: center;
+    background-color: darkred;
+    border-left: 10px solid white;
+    color: white;
+    padding: 5px;
+    font-size: 100px;
+}
+
+img {
+    border-radius: 50px;
+    border: 10px solid black;
+    box-shadow: 5px 10px 10px black;
+    height: 1000px;
+}
+
+#menu{
+    font-size: 50px;
+}
+ul {
+    text-align: center;
+}
+
+li {
+    display: inline-block;
+}
+
+a {
+   border: 5px solid darkblue;
+   margin: 10px;
+   padding: 10px;
+   color: white;
+   text-decoration: none;
+}
