@@ -12,32 +12,64 @@
 
 body {
     /* 1- color de fondo */
+    background-color: #333333;
     /* 2- ancho 90% */
+    width: 90%;
     /* 3- centrar */
+    margin: 0 auto;
 }
 
 .container {
+    text-align: center;
+    border: 1px solid lightgray;
+    box-shadow: 5px 5px 10px black;
+}
+
+#header{
+    box-shadow: 5px 5px 10px black;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 5px 5px 10px;
+    border: 1px solid lightgray;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+#youtubers {
+    box-shadow: 5px 5px 10px black;
+    margin: 10px;
+    padding: 60px;
+    border-radius: 5px 5px 10px;
+    border: 1px solid lightgray;
+}
+
+#footer{
+    box-shadow: 5px 5px 10px black;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 5px 5px 10px;
+    border: 1px solid lightgray;
     text-align: center;
 }
 
 .youtuber, .footer, .header {
     /* 4- color de fondo */
-    border: 1px solid lightgray;
+    background-color: #424242;
+    border: 1px solid gray;
     /* 5- redondear el borde */
+    border-radius: 5px;
     /* 6- sombra */
     margin: 10px auto;
     padding: 20px;
-    text-align: center;    
+    box-shadow: 5px 5px 10px black;  
 }
-.footer {
-    padding: 0px;
-    color: white;
-}
+
 
 .imageHome{
     border:black 4px solid;
     border-radius: 3%;
     /* 7- tamanyo */
+    width: 100%;
     /* Se utiliza en imágenes y videos 
     para asegurarse de que siempre llenen 
     completamente el contenedor, manteniendo
@@ -48,6 +80,7 @@ body {
 .youtuber .images {
 
     /* 8- redondear la imagen*/
+    border-radius: 50%;
     width: 150px;
     height: 150px;    
     /* Se utiliza en imágenes y videos 
@@ -55,6 +88,11 @@ body {
     completamente el contenedor, manteniendo 
     su relación de aspecto*/
     object-fit: cover; 
+}
+h1 {
+    color: white;
+    font-size: 1.5em;
+    margin: 0.5px 5px;
 }
 
 .youtuber h2 {    
@@ -69,12 +107,14 @@ body {
 }
 
 #menu {
-    list-style: none;
     /* 9- quita los puntos */
+    list-style: none;
 }
 
 li {
+    color: white;
     /* 10- haz que los li no sean de tipo bloque */
+    display: inline-block;
     /* 11- borde izquierdo rojo */
     border-left: 4px red solid;
     /* 12- separa el borde de la izquierda */
@@ -83,11 +123,18 @@ li {
 
 #menu a {
     /* 13- enlaces blancos */
+    color: white;
     /* 14- sin subrayado */
+    text-align: center;
+    text-decoration: none;
+    padding: 5px;
+    margin-left: 5px;
+    font-size: 15px;
 }
 
 #menu a:hover {
     /* 15- cambia el color al subrayado*/
+    color: darkred;
 }
 
 
@@ -104,6 +151,7 @@ li {
     transition: background-color 0.3s ease;
 }
 .button:hover {
+    background-color: darkred;
     /* 16- cambia el color al boton*/
 }
 
@@ -112,9 +160,11 @@ li {
         /* 17- cambia el color al BORDE*/
     }
     .button {
+        
         /* 18- cambia el color al boton*/        
     }
     .button:hover {
+        background-color: darkred;
         /* 19- cambia el color al boton*/
     }    
 }
