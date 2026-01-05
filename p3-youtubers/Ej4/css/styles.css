@@ -21,7 +21,6 @@ body {
 
 .container {
     text-align: center;
-    border: 1px solid lightgray;
     box-shadow: 5px 5px 10px black;
 }
 
@@ -30,7 +29,7 @@ body {
     margin: 10px;
     padding: 20px;
     border-radius: 5px 5px 10px;
-    border: 1px solid lightgray;
+    border: 1px solid gray;
     text-align: center;
     font-size: 1.5em;
 }
@@ -40,7 +39,7 @@ body {
     margin: 10px;
     padding: 60px;
     border-radius: 5px 5px 10px;
-    border: 1px solid lightgray;
+    border: 1px solid gray;
 }
 
 #footer{
@@ -48,7 +47,7 @@ body {
     margin: 10px;
     padding: 20px;
     border-radius: 5px 5px 10px;
-    border: 1px solid lightgray;
+    border: 1px solid gray;
     text-align: center;
 }
 
@@ -151,16 +150,18 @@ li {
     transition: background-color 0.3s ease;
 }
 .button:hover {
-    background-color: darkred;
     /* 16- cambia el color al boton*/
+    background-color: darkred;
 }
-
+.header:hover, .footer:hover, .youtuber:hover {
+    border: 1px solid darkred;
+}
 @media all and (max-width: 700px) {
     .youtuber, .footer {
         /* 17- cambia el color al BORDE*/
+        border: 1px solid darkred;
     }
     .button {
-        
         /* 18- cambia el color al boton*/        
     }
     .button:hover {
