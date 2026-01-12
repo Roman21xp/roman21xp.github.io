@@ -173,10 +173,10 @@ text-decoration: underline #6599FF;
  */
 
   /* necesitas 4 instrucciones. 3 son distancia a los bordes :)*/
-  /*1: */  
-  /*2: */    
-  /*3: */    
-  /*4: */    
+  /*1: */  position: fixed;
+  /*2: */  margin-top: 30%;  
+  /*3: */  margin-left: 5%;  
+  /*4: */  margin-right: 5%;  
   border:2px solid red;
   background-color: white;
   margin-bottom: 5px;
@@ -230,7 +230,7 @@ text-decoration: underline #6599FF;
     Punto 7.1: Barra de menu siempre estara 
     */
     /* necesitas 1 instruccion*/
-    /*1: */
+    /*1: */ float: none;
     text-align: center;
     padding-bottom: 5px;
   }
@@ -240,7 +240,7 @@ text-decoration: underline #6599FF;
     Punto 7.1: Barra de menu siempre estara 
     */
     /* necesitas 1 instruccion*/
-    /*1: */
+    /*1: */ float: none;
     text-align: center;
     clear: both;
   padding-bottom: 5px;
@@ -255,7 +255,7 @@ text-decoration: underline #6599FF;
     Punto 7.2: Barra de menu siempre estara 
     */
     /* necesitas 1 instruccion*/
-    /*1: */
+    /*1: */ float: none;
 
     text-align: center;
     margin-bottom: 40px;
