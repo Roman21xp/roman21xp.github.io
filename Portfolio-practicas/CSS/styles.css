@@ -26,6 +26,16 @@ h3 {
     text-align: justify;
 }
 
+#menu {
+    font-size: 20px;
+    color: blanchedalmond;
+    text-align: center;
+    box-shadow: 5px 5px 5px lightblue;
+    border: 1px solid lightblue;
+    border-radius: 50px;
+    padding: 10px;
+}
+
 #encabezado {
     border: 1px solid lightblue;
     padding: 2px;
