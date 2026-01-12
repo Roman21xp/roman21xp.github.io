@@ -48,10 +48,9 @@ p {
   /*1: */
   /*2: */
   /*3: */
-   position: fixed;
+  position: fixed;
   top: 0px;
-  left: 0px;
-  right: 0px;
+  width: 100%;
   text-align: center;  
   background-color: #097054;
   border: 1px solid #FF9900;
@@ -92,8 +91,7 @@ text-decoration: underline #6599FF;
   display: block;
   position: fixed;
   bottom: 0px;
-  right: 0px;
-  left: 0px;
+  width: 100%;
   background-color: #097054;
   text-align: center;
   color: white;
@@ -118,7 +116,7 @@ text-decoration: underline #6599FF;
 
 
 #imageLeft {
- /*
+/*
   Punto 2: La capa de las imagenes debe aparecer a la izquierda de la pantalla
  */
 
@@ -130,7 +128,7 @@ text-decoration: underline #6599FF;
 }
 
 #imageRight {
- /*
+/*
   Punto 2: La capa de las imagenes debe aparecer a la derecha de la pantalla
  */
 
@@ -152,7 +150,7 @@ text-decoration: underline #6599FF;
 }
 
 #imageToHide {
- /*
+/*
   Punto 3: La capa de las imagenes debe aparecer a la izquierda de la pantalla
  */
 
@@ -167,7 +165,7 @@ text-decoration: underline #6599FF;
 }
 
 #cookieEU {
- /*
+/*
   Punto 4: La capa esta posicionada casi al centro de la pantalla. Se diferencia del menu y del footer en que NO se queda fija al hacer scroll de la pagina.
  */
 
@@ -184,7 +182,7 @@ text-decoration: underline #6599FF;
 }
 
 #textOverflow {
- /*
+/*
   Punto 5: La capa tiene una barra de scroll vertical para que podamos leer el texto que no cabe en el tamaño. Solo vertical, no horizontal
  */
 
@@ -267,7 +265,6 @@ text-decoration: underline #6599FF;
   #header {
     margin-top: 50px;
   }
- 
 }
 
 @media all and (max-width: 300px) {
