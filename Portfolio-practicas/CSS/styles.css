@@ -132,12 +132,27 @@ h3 {
     display: inline-block;
 }
 
+#titulo10{
+    font-size: 25px;
+    color: blanchedalmond;
+    text-align: center;
+    border: 2px solid #e0e0e0;
+    border-radius: 15px;
+    padding: 60px;
+    width: 272px;
+    margin-bottom: 15px;
+    margin-left: 10px;
+    margin-right: auto;
+    display: inline-block;
+}
+
 /* Seccion de enlaces */
 
 #listas {
     border: 2px solid #e0e0e0;
     border-radius: 15px;
     padding: 10px;
+    margin-left: 52%;
 }
 
 a {
@@ -168,15 +183,33 @@ a {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+.enlace {
+    background-color: #4d82bc;
+    font-size: 32px;
+    color: blanchedalmond;
+    text-align: center;
+    border: 2px solid #e0e0e0;
+    border-radius: 15px;
+    width: 60%;
+    margin-left: 20%;
+    margin-bottom: 10%;
+    padding: 12px 18px;
+    display: block;    
+}
+
 /* Seccion del HOVER */
 
 img:hover{
-    border: lightblue 5px  solid;
+    border: #84b6f4 5px  solid;
+}
+
+a:hover {
+    color: #c4dafa;
+    text-decoration: underline;
 }
 
 #listas:hover {
-    border: 1px solid gray;
-    box-shadow: 5px 5px gray;
+    border: 2px solid #84b6f4;
 }
 
 #titulo1:hover {
@@ -204,7 +237,7 @@ img:hover{
     }
 
     img{
-        border: 2px solid lightblue;
+        border: 2px solid #4d82bc;
         width: 100px
     }
 
