@@ -1,0 +1,77 @@
+html, body{
+    margin: 0;
+    padding: 0;
+}
+
+#todo{
+    background-color: #005187;
+    padding-top: 120px;   
+    padding-bottom: 70px; 
+}
+
+#encabezado{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #4d82bc;
+    border: solid 2px #e0e0e0;
+    z-index: 1000;
+}
+
+h1{
+    font-size: 40px;
+    color: blanchedalmond;
+    padding: 30px;
+    margin: 0;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#seccion{
+    margin-top: 100px;
+}
+
+img{
+    display: block;
+    margin: 0 auto;
+    border-radius: 60%;
+    border: 15px solid #4d82bc;
+    height: auto;
+    width: 40%;
+    max-width: 520px;
+    min-width: 220px;
+}
+
+#pe{
+    margin-top: 30px;
+}
+
+#parrafo{
+    background-color: #4d82bc;
+    text-align: center;
+    margin: 0px 20%;
+    padding: 10px;
+    font-size: large;
+    color: blanchedalmond;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: block;
+    border-radius: 50px;
+}
+
+#pie{
+    background-color: #84b6f4;
+    border: solid 2px #e0e0e0;
+    text-align: center;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    font-size: large;
+    color: blanchedalmond;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+img:hover{
+    border: #84b6f4 15px solid;
+}

@@ -1,31 +1,48 @@
-body {
-    background-size: cover;
-    text-align: center;
-    margin: 50px;
-    padding: 50px;
+/*:root{
+    --blue-900: #005187;  marino principal color del fondo
+    --blue-700: #4d82bc;  azul medio borde de la imagen, titulo principal y 
+    --blue-500: #84b6f4;  azul claro color del pie de pagina
+    --blue-200: #c4dafa;  muy claro 
+}*/
+
+html, body{
+    margin: 0;
+    padding: 0;
+}
+
+/* Seccion del contenedor principal */
+
+#todo{
+    background-color: #005187;
+    padding-top: 120px;   
+    padding-bottom: 70px; 
 }
 
 img {
-    width: 70%;
+    width: 400px;
     height: fit-content;
-    border-radius: 100%;
+    border: 5px solid #4d82bc;
+    border-radius: 50%;
     margin-left: 20px;
+    float: left;
 }
 
 h1 {
     font-size: 40px;
-    color:blanchedalmond;
-    padding: 30px 30px 30px;
-    margin: 5px 5px 5px;
+    color: blanchedalmond;
+    padding: 30px;
+    margin: 0;
     text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-
+/*
 h3 {
     font-size: 25px;
     color: blanchedalmond;
     text-align: justify;
-}
+}*/
 
+/*
 #menu {
     font-size: 20px;
     color: blanchedalmond;
@@ -34,30 +51,91 @@ h3 {
     border: 1px solid lightblue;
     border-radius: 50px;
     padding: 10px;
-}
+}*/
 
 #encabezado {
-    border: 1px solid lightblue;
-    padding: 2px;
-    margin: auto;
-    border-radius: 50px;
-    box-shadow: 5px 5px 5px lightblue;
-    font-style: italic;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #4d82bc;
+    border: solid 2px #e0e0e0;
+    z-index: 1000;
 }
 
-P {
+#primero {
+    background-color: #4d82bc;
     font-size: 25px;
     color: blanchedalmond;
     text-align: center;
-    box-shadow: 5px 5px 5px lightblue;
-    border: 1px solid lightblue;
-    border-radius: 50px;
-    padding: 10px;    
+    border: 2px solid #e0e0e0;
+    border-radius: 15px;
+    width: 60%;
+    margin-left: 20%;
+    margin-bottom: 10%;
+    padding: 10px;
+    display: inline-block;    
 }
 
+/* Seccion de los titulos de las practicas */
+
+#titulo1{
+    font-size: 25px;
+    color: blanchedalmond;
+    text-align: center;
+    border: 2px solid #e0e0e0;
+    border-radius: 15px;
+    padding: 60px;
+    width: 60px;
+    margin-bottom: 15px;
+    margin-left: 10px;
+    margin-right: auto;
+    display: inline-block;
+}
+
+#titulo2{
+    font-size: 25px;
+    color: blanchedalmond;
+    text-align: center;
+    border: 2px solid #e0e0e0;
+    border-radius: 15px;
+    padding: 60px;
+    width: 60px;
+    margin-left: 10px;
+    margin-right: auto;
+    display: inline-block;
+}
+
+#titulo3{
+    font-size: 25px;
+    color: blanchedalmond;
+    text-align: center;
+    border: 2px solid #e0e0e0;
+    border-radius: 15px;
+    padding: 60px;
+    width: 60px;
+    margin-left: 10px;
+    margin-right: auto;
+    display: inline-block;
+}
+
+#titulo4{
+    font-size: 25px;
+    color: blanchedalmond;
+    text-align: center;
+    border: 2px solid #e0e0e0;
+    border-radius: 15px;
+    padding: 60px;
+    width: 60px;
+    margin-left: 10px;
+    margin-right: auto;
+    display: inline-block;
+}
+
+/* Seccion de enlaces */
+
 #listas {
-    box-shadow: 5px 5px lightblue;
-    border: 1px solid lightblue;
+    border: 2px solid #e0e0e0;
     border-radius: 15px;
     padding: 10px;
 }
@@ -73,11 +151,24 @@ a {
         text-align: center;
         display: inline-block;
         list-style: none;
-    }
-
-a:hover{
-    color: gray;
 }
+
+/* Seccion del pie de pagina*/
+
+#pie{
+    background-color: #84b6f4;
+    border: solid 2px #e0e0e0;
+    text-align: center;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    font-size: large;
+    color: blanchedalmond;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Seccion del HOVER */
 
 img:hover{
     border: lightblue 5px  solid;
@@ -88,11 +179,23 @@ img:hover{
     box-shadow: 5px 5px gray;
 }
 
-P:hover {
-    box-shadow: 5px 5px 5px gray;
-    border: 1px solid gray; 
-    color: gray;  
+#titulo1:hover {
+    background-color: #84b6f4;
 }
+
+#titulo2:hover {
+    background-color: #84b6f4;
+}
+
+#titulo3:hover {
+    background-color: #84b6f4;
+}
+
+#titulo4:hover {
+    background-color: #84b6f4;
+}
+
+/* Seccion para dispositivos moviles */
 
 @media all and (max-width: 500px) {
     #todo{
