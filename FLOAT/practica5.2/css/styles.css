@@ -1,47 +1,7 @@
-*{
-  margin: 0px auto;
-  box-sizing: border-box;
-}
-
-/* Seccion del fondo */
-
-body {
-  background: url('/FLOAT/practica5.2/images/Fondo.png');
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  font-family: 'Indie Flower', cursive;
-  background-attachment: fixed;
-}
-
-/* seccion de los titulos */
-
-h1, h2 {
-  text-align: center;
-}
-
-/* seccion del menu */
-
-#menu-principal {
-  position: fixed;
-  top: 0px;
-  width: 100%;
-  text-align: center;  
-  background-color: #cc0000;
-  border: 1px solid #000000;
-  font-family: 'Pacifico', cursive;
-  font-size: 1.2em;
-}
-
-#menu-principal a{
-  color: white;
-  text-decoration: none;
-}
-
 
 #menu-principal li{
-  display: inline;
-  padding-left: 5px;  
+  display: inline-block;
+  padding-left: 8px 10px;  
 }
 
 #menu-principal li:hover{
@@ -191,7 +151,8 @@ p {
   color: #fcffff;
   border: 2px solid rgba(255,255,255,0.20);
   border-radius: 15px;
-  padding: 15px;  
+  padding: 15px;
+  clear: both;  
 }
 
 #textMedio {
@@ -205,23 +166,8 @@ p {
   padding: 20px;
   margin-right: 20px;
   border-radius: 20px;
+  clear: both;
 } 
-
-.button {
-  background-color: #cc0000; 
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-}
-
-.button:hover {
-    box-shadow:0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-}
-
 
 @media all and (max-width: 500px) {
   img{
@@ -230,7 +176,7 @@ p {
   
   #imageLeft {
 
-  float: none;
+    float: none;
     text-align: center;
     padding-bottom: 5px;
   }
@@ -243,7 +189,7 @@ p {
   }
   
   #textCentral {
-    margin: 0px 0px ;
+    margin: 0px 0px;
   }
   
   #imageToHide {
@@ -263,6 +209,259 @@ p {
 
 @media all and (max-width: 300px) {
   #header {
+    margin-top: 100px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+    background: url('/FLOAT/practica5.2/images/Fondo.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+  padding-bottom: 80px;
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+img {
+  border: dashed 5px #FF9900;
+  margin: 10px;
+}
+
+ul {
+  color: white;
+}
+
+p {
+  margin-bottom: 5px;
+}
+
+#header {
+  margin-top: 35px;
+  text-align: center;
+  background-color: #FF9900;
+  border-bottom: 5px solid #6599FF;
+  border-top: 5px solid #6599FF;
+  color: white;
+  padding-top: 10px;
+}
+
+
+#menu {
+  
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  text-align: center;  
+  background-color: #cc0000;
+  border: 1px solid #000000;
+  font-size: 1.2em;
+  z-index: 1500;
+}
+
+#menu a{
+  color: white;
+  text-decoration: none;
+}
+
+
+#menu li{
+  display: inline-block;
+  padding-left: 8px 10px; 
+}
+
+#menu li a:hover{
+  
+background-color: #c30000ab;  
+}
+
+#redes-sociales {
+    float: right;
+    width: 10%;
+    margin-right: 20px;
+    margin-top: 30px;
+}
+
+#sociales {
+  display: inline-block;
+  width: 40px;
+  margin: 0 auto 15px auto;
+  float: none;
+}
+
+
+#footer{
+  
+  display: block;
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  background-color: #097054;
+  text-align: center;
+  color: white;
+  border-top: 5px solid black;
+  clear: both;
+}
+
+#footer a{
+  color: white;
+  text-decoration: none;
+}
+
+#footer a:hover{
+  color: #443266;
+  background-color: white;
+  text-decoration: none;
+}
+#image {
+  text-align: right;
+  margin-right: 60px;
+}
+
+
+#imageLeft {
+
+  float: left;
+  text-align: center;
+  padding-bottom: 5px;
+}
+
+#imageRight {
+
+  float: right;
+  text-align: center;
+  padding-bottom: 5px;
+}
+
+#textMain {
+
+  clear: both;
+}
+
+#imageToHide {
+  float: left;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+#textCookie {
+  text-align: center;
+}
+
+#cookieEU {
+
+  position: fixed;
+  margin-top: 30%;  
+  margin-left: 5%;  
+  margin-right: 5%;  
+  border:2px solid red;
+  background-color: white;
+  margin-bottom: 5px;
+  padding-bottom: 5px;
+  box-shadow: 2px 2px 50px black;
+}
+
+#textOverflow {
+
+  overflow: auto;
+  overflow-y: scroll;
+  height: 250px;
+  text-align: justify;
+  border: 5px solid black;
+  background-color: white;
+  padding: 20px;
+  margin-right: 20px;
+}
+
+#textCentral {
+  margin-top: 10px;
+  padding: 15px;
+  border: 5px dashed black;
+  background-color: white;
+  margin: 10px 250px ;
+  border-radius: 30px 30px 30px 30px ;    
+}
+
+.button {
+  	background-color: #097054; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.button:hover {
+    box-shadow:0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+@media all and (max-width: 500px) {
+  #imageLeft {
+
+    float: none;
+    text-align: center;
+    padding-bottom: 5px;
+  }
+
+  #imageRight {
+
+    float: none;
+    text-align: center;
+    clear: both;
+  padding-bottom: 5px;
+  }
+  
+  #textCentral {
+    margin: 0px 0px ;
+  }
+  
+  #imageToHide {
+  float: none;
+
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  #textOverflow {
+    margin-right: 0px;
+  }
+  
+  #header {
+    margin-top: 50px;
+  }
+}
+
+@media all and (max-width: 300px) {
+  #header {
+    
     margin-top: 100px;
   }
 }
