@@ -244,7 +244,9 @@ p {
       margin: 0 auto 15px auto; 
     }
     
-
+    .li{
+      list-style: none;
+    }
 
     @media all and (max-width: 500px) { 
       .card.left .media, 
