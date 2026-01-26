@@ -254,16 +254,16 @@ p {
       .card.right .panel, 
       .card.with-social .media, 
       .card.with-social .overflow-panel, 
-      #redes-sociales{
-      float: none; width: 90%; 
+      #redes-sociales, #list{
+      float: none; 
     } 
+  
+
+    #list li{
+      display: inline;
+    }
     
-    #redes-sociales{ 
-      clear: both; 
-      margin-top: 15px; 
-      text-align: center; 
-    } 
-    
+
     .card.with-social .overflow-panel{ 
       height: 250px;
       margin-left: 3%; 
