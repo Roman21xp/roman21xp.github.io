@@ -1,0 +1,10 @@
+.padre {
+    border: 5px solid black;
+    display: flex;
+    flex-direction: column;
+}
+
+.hijo {
+    border: 2px solid red;
+    width: 200px;
+}
