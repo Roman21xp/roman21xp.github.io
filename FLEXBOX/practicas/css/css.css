@@ -19,11 +19,12 @@ body {
     display: flex;
     align-items: center; 
     justify-content: space-between;
+    background-color: lightgrey;
 }
 
 .avatar {
-    width: 100px;
-    height: 100px;
+    width: 90px;
+    height: 90px;
     background: #3498db;
     border-radius: 50%;
     border: 2px solid black;
