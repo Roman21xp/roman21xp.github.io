@@ -10,3 +10,8 @@ console.log("Te llamas: " + nombre, "y Estas en: " + curso)
 
 nombre="Julieta"
 curso="DAW"
+
+if (edad > 17)
+    console.log("puede beber")
+else
+    console.log("No puede beber")
