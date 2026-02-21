@@ -55,8 +55,7 @@ console.log ("la suma es: " + misuma)
 
 
 function dameNumero(max){
-let numero=Math.floor(Math.
-    random() * max)
+let numero=Math.floor(Math.random() * max)
 console.log(numero)
 }
 
