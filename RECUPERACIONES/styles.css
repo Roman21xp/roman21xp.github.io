@@ -7,12 +7,24 @@ body {
     background-color: #162B4E;
 }
 
+h1 {
+    color: white;
+    text-align: center;
+    font-size: 50px;
+}
+
 #menu-principal {
     background-color: #EDE8D0;
     height: 50px;
     display: flex;
-    align-items: center;
-    color: BLACK;
+    color: black;
+    text-align: center;
+    font-weight: 700;
+}
+
+a {
+    text-decoration: none;
+    color: black;
 }
 
 li {
@@ -21,11 +33,18 @@ li {
 }
 
 #redes, #hardware, #iso, #lenguajes-de-marcas, #base-de-datos {
-    background-color: #EDE8D0;
+    background-color: lightblue;
     color: BLACK;
-    width: 50%;
+    width: 200px;
+    height: 200px;
     margin-top: 20px;
     padding: 10px;
     border-radius: 5px;
-    box-shadow: 0 5px black;
+    text-align: center;
+    align-content: center;
+}
+
+#redes:hover, #hardware:hover, #iso:hover, #lenguajes-de-marcas:hover, #base-de-datos:hover {
+    box-shadow: 0 0 10px white;
+    color: white;
 }
