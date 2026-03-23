@@ -1,0 +1,86 @@
+/* Todo */
+
+* {
+    margin: auto;
+    width: 100%;
+}
+
+/* Flex para los cuadrados de las asignaturas */
+
+#asignaturas {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+    padding: 20px;
+
+}
+
+/* Cuerpo */
+
+body {
+    background-color: #162B4E;
+}
+
+/* Titulo principal */
+
+h1 {
+    color: white;
+    text-align: center;
+    font-size: 50px;
+    margin-top: 20px;
+}
+
+/* Menu Superior */
+
+#menu-principal {
+    background-color: #EDE8D0;
+    height: 50px;
+    display: flex;
+    color: black;
+    text-align: center;
+    font-weight: 700;
+}
+/* Enlaces */
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    color: white;
+}
+/* Listas */
+
+li {
+    display: inline;
+    margin: 0px 15px;
+}
+
+/* Asignaturas */
+
+#redes, #hardware, #iso, #lenguajes-de-marcas, #base-de-datos, #Otros {
+    background-color: lightblue;
+    color: black;
+    width: 200px;
+    height: 200px;
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    align-content: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+}
+
+#redes:hover, #hardware:hover, #iso:hover, #lenguajes-de-marcas:hover, #base-de-datos:hover, #Otros:hover {
+    box-shadow: 0 0 10px white;
+    a:hover {
+        color: white;
+    }
+}
