@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Usuarios</title>
+    <style>
+       
+    </style>
+    <link rel="stylesheet" href="css/04.css">
+</head>
+<body>
+    <h1>Lista de Usuarios</h1>
+    <p id="resultado">Cargando...</p>
+
+    <script>
+        // URL de una API pública
+        const url = 'https://jsonplaceholder.typicode.com/users';
+        let resultado = document.getElementById("resultado");
+
+        function pedirDatos() {
+            // Usamos fetch para hacer una solicitud GET
+            fetch(url)
+                .then(response => {
+                    // Verificamos si la respuesta fue exitosa
+                    if (!response.ok) {
+                        throw new Error(`Error en la solicitud: ${response.status} ${response.statusText}`);
+                    }
+                    // Convertimos la respuesta a JSON
+                    return response.json();
+                })
+                .then(data => {
+                    // Aquí trabajamos con los datos obtenidos
+                    console.log("----> data: ",data);
+
+                    // Creamos una lista para mostrar los datos
+                    const lista = document.createElement('ul');
+                    data.forEach(usuario => {
+                        const item = document.createElement('li');
+                        item.className = "element";
+                        item.innerHTML = `<strong>Nombre:</strong> ${usuario.name} <br> <strong>Correo:</strong> ${usuario.email}`;
+                        lista.appendChild(item);
+                    });
+                    resultado.innerHTML = ''; // Limpiamos el mensaje de "Cargando..."
+                    resultado.appendChild(lista); // Añadimos la lista al DOM
+                })
+                .catch(error => {
+                    // Manejo de errores
+                    console.log('Hubo un problema con la solicitud:', error);
+                    resultado.innerHTML = `<span style="color:red;">${error.message}</span>`;
+                });
+        }
+
+        // Inicio
+        resultado.innerHTML = "Cargando...";
+        
+        // Pausa dramática antes de cargar los datos
+        setTimeout(() => {
+            resultado.innerHTML = "Datos:";
+            resultado.innerHTML += "<hr>";
+            pedirDatos();
+        }, 2000); // Espera de 2 segundos
+    </script>
+</body>
+</html>

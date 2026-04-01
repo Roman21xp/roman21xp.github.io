@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Promise sencilla</title>
+  <link rel="stylesheet" href="css/02.css">
+</head>
+<body>
+  <button id="btn">Probar promesa</button>
+  <div id="caja">Esperando...</div>
+
+  <script>
+    //variables
+    const btn = document.getElementById("btn");
+    const caja = document.getElementById("caja");
+
+    //funciones
+    function tareaAsync() {
+      return new Promise((resolve, reject) => {
+        caja.textContent = "Cargando...";
+        caja.style.background = "khaki";
+
+        setTimeout(() => {
+          const todoBien = true; // cambia a false para probar el error
+
+          if (todoBien) {
+            resolve("Hecho");
+          } else {
+            reject("Falló");
+          }
+        }, 2000);
+      });
+    }
+
+    //eventos
+    btn.addEventListener("click", () => {
+      tareaAsync()
+        .then((mensaje) => {
+          caja.textContent = mensaje;
+          caja.style.background = "lightgreen";
+        })
+        .catch((error) => {
+          caja.textContent = error;
+          caja.style.background = "tomato";
+        });
+    });
+
+  </script>
+</body>
+</html>

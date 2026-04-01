@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saludo Personalizado - Estilo IKEA</title>
+    <link rel="stylesheet" href="cs/06.css">
+</head>
+<body>
+    <h1 id="saludo">Hola querid@ anónim@</h1>
+    <input type="text" id="nombre" placeholder="Pon aquí tu nombre">
+    <div class="button-container">
+        <button id="boton">Almacenar nombre</button>
+        <button id="botonBorrar">Borrar nombre</button>
+    </div>
+
+    <script>
+        // Referencias a elementos del DOM
+        let saludo = document.getElementById("saludo");
+        let nombre = document.getElementById("nombre");
+        let boton = document.getElementById("boton");
+        let botonBorrar = document.getElementById("botonBorrar");
+
+        // Evento para almacenar el nombre en localStorage
+        boton.addEventListener("click", function() { 
+            localStorage.setItem("nombre", nombre.value); // Guardar el nombre
+            saludo.textContent = "Hola " + nombre.value; // Actualizar el saludo
+        });
+
+        // Evento para borrar el nombre de localStorage
+        botonBorrar.addEventListener("click", function() { 
+            localStorage.removeItem("nombre"); // Borrar el nombre
+            saludo.textContent = "Hola querid@ anónim@"; // Actualizar el saludo
+        });
+
+        // Recuperar el nombre almacenado al cargar la página
+        let nombreRecuperado = localStorage.getItem("nombre");
+        if (nombreRecuperado) {
+            saludo.textContent = "Hola " + nombreRecuperado; // Mostrar el saludo personalizado
+        } else {
+            saludo.textContent = "Hola querid@ anónim@"; // Mostrar el saludo por defecto
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Buscador de Usuarios</title>
+</head>
+<body>
+
+    <h1>Buscador de Usuarios</h1>
+
+    <input type="number" id="inputId" placeholder="Escribe un número del 1 al 10">
+    <button id="btnBuscar">Buscar</button>
+
+    <p id="resultado">Aquí aparecerá el usuario...</p>
+
+    <script>
+    const btn = document.getElementById("btnBuscar");
+    const inputId = document.getElementById("inputId");
+    const resultado = document.getElementById("resultado");
+
+    // La función que busca el usuario en la API
+    const buscarUsuario = async (id) => {
+        try {
+            resultado.textContent = "Buscando...";
+
+            // 1. Pedimos los datos a la API
+            const response = await fetch(`https://jsonplaceholder.typicode.com/users/${id}`);
+
+            // 2. Comprobamos que el servidor respondió bien
+            if (!response.ok) {
+                throw new Error("Usuario no encontrado");
+            }
+
+            // 3. Convertimos la respuesta a objeto JS
+            const data = await response.json();
+
+            // 4. Pintamos el resultado en el DOM
+            resultado.textContent = `Nombre: ${data.name} — Email: ${data.email}`;
+
+        } catch (error) {
+            resultado.textContent = `Error: ${error.message}`;
+            resultado.style.color = "red";
+        }
+    };
+
+    // Cuando el usuario hace click, ejecutamos la función
+    btn.addEventListener("click", () => {
+        const id = inputId.value;
+        if (id > 0) {
+            resultado.style.color = "black";
+            buscarUsuario(id);
+        }
+    });
+</script>
+
+</body>
+</html>
