@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuenta Regresiva con Promesas</title>
+    <link rel="stylesheet" href="css/03.css">
+</head>
+<body>
+    <h1 id="resultado">5</h1>
+    <div>
+        La promesa te permite escribir en la caja del formulario sin que se bloquee :)
+    </div>
+    <form id="form" action="#" method="post">
+        <label for="name">Nombre:</label>
+        <br>
+        <input type="text" id="name" name="name" placeholder="Escribe tu nombre" required>
+        <br><br>
+        <button type="submit" id="enviar">Enviar</button>
+    </form>
+
+    <script>
+        //variables
+        let name=document.getElementById("name")
+
+        // Función que maneja la cuenta regresiva usando una promesa
+        function actualizarReloj() {            
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    segundos--; 
+                    document.getElementById("resultado").innerHTML = segundos;
+
+                    if (segundos > 0) {                    
+                        actualizarReloj(); // Llamada recursiva hasta llegar a cero
+                    } else {
+                        resolve("¡He terminado!");
+                        document.getElementById("resultado").innerHTML = `¡ACABÉ ${name.value}!`;
+                    }
+                }, 1000); // Espera de un segundo
+            });
+        }
+
+        // Inicialización de la cuenta regresiva
+        let segundos = 5; // Tiempo inicial en segundos
+        document.getElementById("resultado").innerHTML = segundos; // Mostrar el tiempo inicial
+        actualizarReloj() // Iniciar la cuenta regresiva
+    </script>    
+</body>
+</html>

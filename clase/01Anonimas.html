@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        num1: <input type="number" id="num1" value="7">
+        num2: <input type="number" id="num2" value="9">
+        <br><input type="button" id="goFuncion" value="goFuncion"> 
+        <input type="button" id="goAnonimo" value="goAnonimo"> 
+        <input type="button" id="goFlecha" value="goFlecha">
+    </form>
+    <div id="resultado"></div>
+    <script>
+        //variables
+        let num1=document.getElementById("num1")
+        let num2=document.getElementById("num2")
+        let resultado=document.getElementById("resultado")
+        let goFuncion=document.getElementById("goFuncion")
+        let goAnonimo=document.getElementById("goAnonimo")
+        let goFlecha=document.getElementById("goFlecha")
+
+        // funciones
+        function suma(a,b){
+            return parseInt(a)+parseInt(b)
+        }
+        //anonima
+        const sumaAnonima = function (a,b)  {
+            return parseInt(a)+parseInt(b)
+        }
+        //flecha
+        const sumaFlecha = (a,b) => parseInt(a)+parseInt(b);
+
+
+        //eventos
+        goFuncion.addEventListener("click", ()=>{
+            resultado.innerHTML=`con function: ${suma(num1.value, num2.value)}`
+        })
+        goAnonimo.addEventListener("click", ()=>{
+            resultado.innerHTML=`con anonima: ${sumaAnonima(num1.value, num2.value)}`
+        })
+        goFlecha.addEventListener("click", ()=>{
+            /*
+            No funciona con flecha por que define la funcion pero no la ejecuta
+            
+            let a=num1.value
+            let b=num2.value    
+            //resultado.innerHTML=`con flecha: ${(a,b) => parseInt(a)+parseInt(b)}`
+            resultado.innerHTML="con flecha: "+ (a,b) => parseInt(a)+parseInt(b)
+            */
+           resultado.innerHTML=`con flecha: ${sumaFlecha(num1.value, num2.value)}`
+        })
+     </script>
+</body>
+</html>

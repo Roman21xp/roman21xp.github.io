@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario-java</title>
+</head>
+<body>
+    <h1>Formulario con JAVASCRIPT</h1>
+    <h2>Suma Números</h2>
+    <input type="text" id="numero" placeholder="Pon un numero positivo">
+   <button id="button">Suma</button>
+   <div id="resultado"></div>
+   <script>
+    
+    let num=document.getElementById("numero")
+    let boton=document.getElementById("boton")
+    let resultado=document.getElementById("resultado")
+    let numeros=[]
+    let total=0
+
+    function suma(a,b){
+        return parseInt(a)+parseInt(b)
+    }
+
+    boton.addEventListener("click", (e) => {
+        if (num.value>0){
+            numeros.push(parseInt(num.value))
+            total=suma(total,num.value)
+            resultado.innerHTML=total
+            }
+        }
+    )
+
+   </script>
+</body>
+</html>
