@@ -52,6 +52,8 @@ btnGenerar.addEventListener("click", async () => {
     // genera las estadisticas
 
     const estadisticas = generarEstadisticas();
+    const descripcion = await generarDescripcion(clase, estadisticas);
+    console.log("Descripción:", descripcion);
     
     // muestra en la pantalla mientras carga
 
@@ -60,3 +62,38 @@ btnGenerar.addEventListener("click", async () => {
     console.log("Clase:", clase);
     console.log("Estadisticas:", estadisticas);
 });
+
+// --- LLAMADA A LA API DE TEXTO ---
+const generarDescripcion = async (clase, estadisticas) => {
+
+    const prompt = `En un párrafo dame el nombre y descripción física de un 
+    personaje ${clase} para Dungeons and Dragons con estas estadísticas: 
+    ${estadisticas}`;
+
+    try {
+        const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
+            method: "POST",
+            headers: {
+                "Authorization": `Bearer ${API_KEY}`,
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                model: "z-ai/glm-4.5-air:free",
+                messages: [
+                    { role: "user", content: prompt }
+                ]
+            })
+        });
+
+        if (!response.ok) {
+            throw new Error(`Error HTTP: ${response.status}`);
+        }
+
+        const data = await response.json();
+        return data.choices[0].message.content;
+
+    } catch (error) {
+        console.error("Error generando descripción:", error);
+        return null;
+    }
+};
