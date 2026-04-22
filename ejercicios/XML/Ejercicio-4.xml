@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<productos>
+    <gofres>
+        <tipos>
+            <origen>
+                
+            </origen>
+        </tipos>
+    </gofres>
+    <tostadas>
+        <origen>Francesa</origen>
+    </tostadas>
+    <desayuno>
+        <original>casa</original>
+        <descripcion></descripcion>
+    </desayuno>
+</productos>
+
+<!-- 
+<menu>
+    <desayuno>
+        <nombre>
+        </nombre>
+        <precio>
+        </precio>
+        <descripcion>
+        </descripcion>
+    </desayuno>
+</menu>
+-->

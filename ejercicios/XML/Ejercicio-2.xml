@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nombre>
+    <nombre-pila>Juan</nombre-pila>
+    <apellidos>Delgado MArtinez</apellidos>
+    <pedido>
+        <objeto>bicicleta</objeto>
+        <referencia>A2023</referencia>
+    </pedido>
+    <entrega>
+        <calle>Barco 4</calle>
+        <planta>tercer piso</planta>
+        <letra>letra A</letra>
+        <fecha>19-5-2000</fecha>
+    </entrega>
+</nombre>
