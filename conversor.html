@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambio simple</title>
+</head>
+<body>
+    <h1>Conversor de divisas</h1>
+    <h2>con https://frankfurter.dev/</h2>
+    Cantidad: <input type="number" id="cantidad" value="1">
+    <br>
+    <input type="button" value="Convertir" id="convertir">
+    <div id="resultado"></div>
+
+    <script>
+        let moneda = "EUR"
+        let url = `https://api.frankfurter.dev/v1/latest?base=${moneda}`
+
+        let cantidad = document.getElementById("cantidad")
+        let convertirBtn = document.getElementById("convertir")
+        let resultado = document.getElementById("resultado")
+
+        /*
+            CORRECCIÓN ERROR 2:
+            creaElemento ya NO toca resultado.innerHTML directamente.
+            Solo crea y devuelve un <li> correctamente construido.
+            La función recibe los datos — no necesita ir a buscarlos (error 1 eliminado).
+        */
+        function creaElemento(valor, clave) {
+            // CORRECCIÓN ERROR 4: usamos 'total' en el innerHTML, no cantidad.value * valor directamente
+            let total = Math.round(parseFloat(cantidad.value) * parseFloat(valor) * 100) / 100
+
+            let liElement = document.createElement("li")
+            liElement.innerHTML = `${moneda} (${clave} ${valor}) ==> ${cantidad.value} ${moneda} = ${total} ${clave}`
+
+            return liElement  // devuelve el elemento, no lo pinta aquí
+        }
+
+        /*
+            CORRECCIÓN ERROR 3: función convertir reescrita con async/await
+            Ya no mezclamos async con .then()
+            
+            CORRECCIÓN ERROR 2: la <ul> se crea UNA SOLA VEZ aquí,
+            y dentro del forEach solo añadimos <li> con appendChild.
+            Así evitamos reconstruir el DOM 30 veces.
+        */
+        async function convertir() {
+            try {
+                let response = await fetch(url)
+                let datos = await response.json()
+
+                console.log(datos)
+
+                let cambios = Object.entries(datos.rates)
+
+                // Creamos la <ul> una sola vez, fuera del bucle
+                let lista = document.createElement("ul")
+
+                cambios.forEach(([clave, valor]) => {
+                    console.log(clave, valor)
+                    // appendChild añade el <li> dentro de la <ul> sin reconstruir el DOM
+                    lista.appendChild(creaElemento(valor, clave))
+                })
+
+                // Al final, añadimos la lista completa al resultado de una sola vez
+                resultado.appendChild(lista)
+
+            } catch (error) {
+                console.log("Error en la petición:", error)
+            }
+        }
+
+        // eventos
+        convertirBtn.addEventListener("click", function () {
+            resultado.innerHTML = ""
+            convertir()
+        })
+    </script>
+</body>
+</html>
