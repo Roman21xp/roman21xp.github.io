@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- ============================================================
+    GUÍA XML — EXAMEN LENGUAJES DE MARCAS
+    Lo que entra: crear o arreglar un fichero XML
+    Lo que NO entra: DTD, XPATH, XSLT
+    ============================================================ -->
+
+
+<!-- ════════════════════════════════════════════════════════
+    ESTRUCTURA MÍNIMA OBLIGATORIA
+    ════════════════════════════════════════════════════════
+
+Todo XML válido necesita:
+    1. Declaración en la primera línea (la de arriba ↑)
+    2. UN SOLO elemento raíz que envuelve todo lo demás
+    3. Todos los tags cerrados
+    4. Atributos siempre entre comillas
+-->
+
+<raiz>
+    <elemento>Contenido de texto</elemento>
+    <otro atributo="valor">Más texto</otro>
+</raiz>
+
+
+<!-- ════════════════════════════════════════════════════════
+    EJEMPLO COMPLETO — CATÁLOGO DE PRODUCTOS
+    (el tipo de ejercicio más probable en el examen)
+    ════════════════════════════════════════════════════════ -->
+
+<?xml version="1.0" encoding="UTF-8"?>
+<catalogo>
+
+    <producto id="1" disponible="true">
+        <nombre>Teclado mecánico</nombre>
+        <precio>89.99</precio>
+        <stock>12</stock>
+        <descripcion>Teclado con switches Cherry MX</descripcion>
+    </producto>
+
+    <producto id="2" disponible="false">
+        <nombre>Ratón gaming</nombre>
+        <precio>45.00</precio>
+        <stock>0</stock>
+        <descripcion>Ratón con 6 botones programables</descripcion>
+    </producto>
+
+    <producto id="3" disponible="true">
+        <nombre>Monitor 27"</nombre>
+        <precio>299.00</precio>
+        <stock>5</stock>
+        <descripcion>Panel IPS, 144Hz, Full HD</descripcion>
+    </producto>
+
+</catalogo>
+
+
+<!-- ════════════════════════════════════════════════════════
+    EJEMPLO — LISTA DE ALUMNOS
+    ════════════════════════════════════════════════════════ -->
+
+<?xml version="1.0" encoding="UTF-8"?>
+<clase curso="ASIR" año="2024">
+
+    <alumno id="A01" activo="true">
+        <nombre>Jeff</nombre>
+        <email>jeff@ies.es</email>
+        <nota>7.5</nota>
+    </alumno>
+
+    <alumno id="A02" activo="true">
+        <nombre>Ana</nombre>
+        <email>ana@ies.es</email>
+        <nota>9.0</nota>
+    </alumno>
+
+    <alumno id="A03" activo="false">
+        <nombre>Carlos</nombre>
+        <email>carlos@ies.es</email>
+        <nota>4.0</nota>
+    </alumno>
+
+</clase>
+
+
+<!-- ════════════════════════════════════════════════════════
+    REGLAS — DOCUMENTO BIEN FORMADO
+    (lo que comprueba el profesor al corregir)
+    ════════════════════════════════════════════════════════
+
+CORRECTO                      MAL — ERROR
+
+<nombre>Jeff</nombre>           <nombre>Jeff          ← tag no cerrado
+<item id="1">                   <item id=1>           ← atributo sin comillas
+<a><b></b></a>                  <a><b></a></b>        ← tags solapados
+<?xml ... ?> al principio       <?xml ... ?> en medio ← declaración mal puesta
+Un solo elemento raíz           Dos elementos raíz    ← XML inválido
+precio &lt; 100                 precio < 100          ← carácter sin escapar
+
+-->
+
+
+<!-- ════════════════════════════════════════════════════════
+    CARACTERES ESPECIALES — HAY QUE ESCAPARLOS
+    ════════════════════════════════════════════════════════ -->
+
+<?xml version="1.0" encoding="UTF-8"?>
+<ejemplos>
+
+    <!-- Usando escapes: -->
+    <comparacion>El precio es &lt; 100 &amp; &gt; 10</comparacion>
+    <!-- Se verá como: El precio es < 100 & > 10 -->
+
+    <enlace url="https://ejemplo.com?a=1&amp;b=2">Click aquí</enlace>
+
+    <!-- CDATA: cuando hay mucho texto con caracteres especiales -->
+    <!-- Dentro de CDATA NO hace falta escapar nada -->
+    <codigo>
+        <![CDATA[
+            if (precio < 100 && stock > 0) {
+                alert("En stock");
+            }
+        ]]>
+    </codigo>
+
+</ejemplos>
+
+<!--
+TABLA DE ESCAPES:
+┌─────────────┬────────────┬─────────────────────────┐
+│  Símbolo    │  Escape    │  Nombre                 │
+├─────────────┼────────────┼─────────────────────────┤
+│  <          │  &lt;      │  less than              │
+│  >          │  &gt;      │  greater than           │
+│  &          │  &amp;     │  ampersand              │
+│  "          │  &quot;    │  comilla doble          │
+│  '          │  &apos;    │  comilla simple         │
+└─────────────┴────────────┴─────────────────────────┘
+-->
+
+
+<!-- ════════════════════════════════════════════════════════
+    ATRIBUTOS vs ELEMENTOS HIJO — CUÁNDO USAR CADA UNO
+    ════════════════════════════════════════════════════════ -->
+
+<?xml version="1.0" encoding="UTF-8"?>
+<productos>
+
+    <!--
+      USA ATRIBUTO cuando es:
+        - un identificador (id, código)
+        - un estado/flag (true/false, activo/inactivo)
+        - un metadato corto (tipo, categoría)
+    -->
+    <producto id="P001" activo="true" categoria="electronica">
+
+    <!--
+      USA ELEMENTO HIJO cuando es:
+        - el dato principal
+        - texto largo
+        - algo que puede tener sub-datos
+    -->
+        <nombre>Portátil Lenovo</nombre>
+        <descripcion>Procesador Intel i7, 16GB RAM, SSD 512GB</descripcion>
+        <precio moneda="EUR">899.00</precio>
+
+    </producto>
+
+</productos>
+
+
+<!-- ════════════════════════════════════════════════════════
+     COMENTARIOS EN XML
+     ════════════════════════════════════════════════════════ -->
+
+<!-- Esto es un comentario. El parser XML lo ignora. -->
+
+<!--
+    Los comentarios pueden
+    ocupar varias líneas.
+    No pueden contener -- doble guion en medio.
+-->
+
+
+<!-- ════════════════════════════════════════════════════════
+     EJERCICIO TÍPICO: ARREGLA ESTE XML (con errores)
+     ════════════════════════════════════════════════════════
+
+  El profesor puede darte un XML roto y pedirte que lo corrijas.
+  Busca siempre:
+    1. ¿Falta cerrar algún tag?
+    2. ¿Algún atributo sin comillas?
+    3. ¿Hay más de un elemento raíz?
+    4. ¿Hay < > & sin escapar dentro del contenido?
+    5. ¿La declaración está en la primera línea?
+
+  EJEMPLO CON ERRORES:
+    <libros>
+        <libro id=1>                       ← atributo sin comillas
+            <titulo>Cien años de soledad   ← tag no cerrado
+            <autor>García Márquez</autor>
+        </libro>
+        <libro id="2">
+            <titulo>1984</titulo>
+            <precio>precio < 10€</precio>  ← < sin escapar
+        </libro>
+    </libros>
+    <extras></extras>                      ← segundo elemento raíz
+
+  CORREGIDO:
+-->
+<?xml version="1.0" encoding="UTF-8"?>
+<libros>
+    <libro id="1">
+        <titulo>Cien años de soledad</titulo>
+        <autor>García Márquez</autor>
+    </libro>
+    <libro id="2">
+        <titulo>1984</titulo>
+        <precio>precio &lt; 10€</precio>
+    </libro>
+</libros>
