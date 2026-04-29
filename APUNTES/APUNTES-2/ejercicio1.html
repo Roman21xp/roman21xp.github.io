@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hola Fruta</h1>
+    <input type="button" id="boton" value="¿Qué fruta te gusta?"></input>
+    <input type="text"></input>
+    <div id="resultador">
+        <ul id="lista">
+
+        </ul>
+    </div>
+
+    <script>
+
+        let resultado = document.getElementById("resultador")
+        let frutas = ["Manzana", "Pera", "Plátano", "Naranja"]
+        let boton = document.getElementById("boton")
+        let div = document.getElementById("lista")
+
+        // Crea una función que recorra el array y para cada fruta cree un elemento "<li>" y lo añada al "<ul>"
+            let i=0
+            function evento() {
+                while (i < frutas.length) { 
+                    // imprime por la consola todos los campos del array frutas
+                    console.log(frutas[i])
+                    // creamos un elemento li y lo añadimos al div "padre"
+                    let liElement = document.createElement("li")
+                    // Accedemos al elemento actual del array
+                    liElement.textContent = frutas[i]
+                    // lo añadimos al div o al ul
+                    div.appendChild(liElement)
+                    // Incrementamos +1 a la viariable i para la siguiente vez que se ejecuta el bucle
+                    i++
+                } 
+            }
+            evento();
+        
+    </script>
+       
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PruebaTiempo</title>
+</head>
+<body>
+    <h1>Tiempo</h1>
+    <input type="button" id="run" value="RUN">
+    <div id="resultado"></div>
+
+    <script>
+
+        // variables
+        let boton=document.getElementById("run")
+        let resultado=document.getElementById("resultado")
+
+        // eventos
+        /*boton.addEventListener("click", (e) => {
+            fetch("https://timeapi.io/api/Time/current/zone?timeZone=Europe/Madrid")
+            .then((response) => { 
+                return response.json()
+            
+        })
+            .then((data) => resultado.innerHTML=data.time)
+            .catch((error) => resultado.innerHTML=console.log("ERRRORRR: "+error))
+
+        })*/
+
+        /*fetch("https://timeapi.io/api/Time/current/zone?timeZone=Europe/Madrid")
+            .then(Response => console.log("Todo bien"))
+            // .then(data => console.log("Holaaaa"))
+            .catch(error => console.log("ERRRORRR: "+error))*/
+
+
+
+        boton.addEventListener("click", (e) => {
+            fetch("https://timeapi.io/api/Time/current/zone?timeZone=Europe/Madrid")
+            .then((response) => {
+                return response.json()
+        })
+
+            .then((tiempo) => resultado.innerHTML=tiempo.time)
+            .catch((error) => resultado.innerHTML=console.log("ERRROR: "+error))
+
+        })
+
+
+        
+
+    </script>
+</body>
+</html>

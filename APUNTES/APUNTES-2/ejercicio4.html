@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>(Ejercicio 4)</h2>
+    
+    <input type="button" id="boton" value="Ejecutar Suma"></input>
+   <div id="resultadoSuma">
+        <p id="resultado"></p>
+   </div>
+
+   </div>
+
+    <script>
+        // Anunciado del ejercicio: 
+        //1. Suma todos los números del array y muestralos por pantalla 
+        //Variables constantes:
+        const numeros = [5, 12, 8, 20, 3, 7, 15];
+        let boton = document.getElementById("boton")
+        let resultado = document.getElementById("resultado")
+        // Variables:        
+
+        // Función flecha
+        const funNum = (numeros) => {
+            // total es el acumulador muy importante a la hora de hacer una operación matemática. 
+                let total=0
+            // mientras que i sea menor a la longitud del array, se suma 1 y se vuelve a ejecutar el array
+            for (let i = 0; i < numeros.length; i++) {       
+                total = total+numeros[(i)]
+                console.log ("La suma es: " + total)
+            }
+                return total  
+        }
+
+        boton.addEventListener("click", (e) => {
+            let valorSuma = funNum(numeros)
+            resultado.textContent=valorSuma
+        }) 
+    </script> 
+</body> 
+</html>

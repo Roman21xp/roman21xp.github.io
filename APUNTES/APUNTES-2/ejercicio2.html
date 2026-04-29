@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+</head>
+<body>
+    <h2>(Ejercicio 2)</h2>
+    <h1>titulo-noticia</h1>
+    <input type="button" id="boton" value="Presione para mostrar la noticia"></input>
+    
+    <script>
+        //variables
+        let boton = document.getElementById("boton")
+        let titulo = document.querySelector("h1")
+        let url = "https://jsonplaceholder.typicode.com/posts/1"
+
+        // funcion flecha
+        function resultado() {
+            boton.addEventListener("click", (e) => {    
+                fetch(url)
+                    .then(response => response.json())
+                    .then(data => {
+                    // funcion que aplica tiempo de espera antes de mostrar el resultado en el html
+                        setTimeout(() => {
+                            console.log(data)
+                            titulo.textContent = data.title
+                        
+                            }, 2000);
+                        //console.log(data)
+                        //titulo.innerHTML = data.title
+                })
+                .catch(error => console.log("El error es: "+error))
+        });
+        }
+        // Llamamos a la funcion resultado 
+        resultado();
+    </script>
+</body>
+</html>

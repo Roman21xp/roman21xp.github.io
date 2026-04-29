@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>GATOS</h1>
+    <input type="button" id="boton" value="RUN">
+    <div id="resultado"></div>
+    <img src="" alt="" id="gatoo">
+
+    <script>
+
+        let url="https://api.thecatapi.com/v1/images/search"
+        //let options = {method: 'GET'};
+        let boton=document.getElementById("boton")
+        let resultado=document.getElementById("resultado")
+        let animal = document.getElementById("gatoo")
+
+        // devuelve una imagen
+        function getImage(){
+            fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                //console.log(data)
+                console.log(data[0].url)
+                console.log("----------------------")
+                
+                /*data.results.forEach(url => {
+                    
+                    console.log(animal.url) 
+                    resultado.innerHTML += "<h5>Nombre Foto: " + animal.id + "</h5>" 
+                    resultado.innerHTML += "<img src='" + animal.url + "'>" 
+                });*/ 
+            // muestra en el img del html la imagen del gato
+            animal.src = data[0].url
+            //let resultadoAnimal = animal.src
+
+            //resultado.innerHTML= "<p>imagen de: " +resultadoAnimal +"</p>"
+            
+            })
+
+            .catch (Error => {
+
+                console.log("ERROR:" + Error)
+            });
+        }
+        
+        boton.addEventListener("click", (e) => {
+            console.log("Funciona")
+            console.log("------------")
+            console.log("Foto Gato")
+            console.log("------------")
+            getImage()
+
+        })
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>(Ejercicio 3)</h2>
+    
+    <p><b>Lista de mayores:</b></p>
+    <div id="lista-Mayores">
+        <ul id="lista-mayores">
+        </ul>
+    </div>
+    <br>
+    <p><b>Lista de menores:</b></p>
+    <div id="lista-Menores">
+        <ul id="lista_menores">
+
+        </ul>
+    </div>
+
+    <script>
+        // Anunciado del ejercicio: 
+        //1. Crea dos listas en tu HTML: una llamada lista-mayores y otra lista-menores (ambas etiquetas <ul>).
+        //2. Recorre el array con un bucle (for o forEach).
+        //3. Usa una condicional (if/else) para evaluar cada número:
+        //4. Si el número es mayor o igual a 10, añádelo como un <li> dentro de lista-mayores.
+        //5. Si es menor a 10, añádelo como un <li> dentro de lista-menores. 
+
+
+        //Variables constantes:
+        const numeros = [5, 12, 8, 20, 3, 7, 15];
+        // Variables:
+        let listaMayores = document.getElementById("lista-mayores")
+        let listaMenores = document.getElementById("lista_menores")
+
+        //Recorremos el array numero con el bucle for
+        let arrayNum = numeros.length
+        let liElement = document.createElement("li")
+
+        for (let i = 0; i < arrayNum; i++) { 
+            // mientras que el resultado del array sea mayor o igual a 10 se ejecuta la siguiente instrucción
+            if (numeros[i] >= 10) {
+                // muestra el resultado del número (casilla del array) por la consola
+                console.log( "Números de las lista de mayores: " + numeros[i])
+                // Creamos el elemento li y lo añadimos al div/ul "padre"
+                let liElement = document.createElement("li")
+                // Accedemos al elemento actual del array
+                liElement.textContent = numeros[i]
+                // Añadimos el elemento el resultado del array al div/ul 
+                listaMayores.appendChild(liElement) 
+            // mientras que el resultado del array sea menor a 10 se ejecuta la siguiente instrucción
+            } else if (numeros[i] < 10){
+                // Muestra el resultado del número (casilla del array) por la consola
+                console.log("Números de la lista de menores: " + numeros[i])
+                // Creamos el elemento li y lo añadimos al div/ul "padre"
+                liElement = document.createElement("li")
+                // Accedemos al elemento actual del array
+                liElement.textContent = numeros[i]
+                 // Añadimos el elemento el resultado del array al div/ul 
+                listaMenores.appendChild(liElement)
+            // si no se cumple ninguna condición anterior se ejecuta el else
+            //} else {
+
+            //    console.error("Ha habido un error al ejecutar la página")}
+            }
+        };
+    </script>
+</body>
+</html>

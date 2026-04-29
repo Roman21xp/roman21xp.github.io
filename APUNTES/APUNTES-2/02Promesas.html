@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Promise sencilla</title>
+  <link rel="stylesheet" href="css/02.css">
+</head>
+<body>
+  <button id="btn">Probar promesa</button>
+  <div id="caja">Esperando...</div>
+
+  <script>
+    //variables
+    const btn = document.getElementById("btn");
+    const caja = document.getElementById("caja");
+
+    //funciones. El new coge el mismo objeto y crea otro objeto 
+    // igual pero distinto.
+    function tareaAsync() {
+      return new Promise((resolve, reject) => {
+        caja.textContent = "Cargando...";
+        caja.style.background = "khaki";
+
+
+        // setTimeout es una instrucción de JavaScript que lo que hace es retrasar la instrucción los milisegundos que le hemos dicho
+        
+        setTimeout(() => {
+          const todoBien = false; // cambia a false para probar el error
+
+          if (todoBien) {
+            resolve("Lo He Hecho");
+          } else {
+            reject("Lo Falló");
+          }
+        }, 2000); //hace una pausa de 2000 milisegundos
+      });
+    }
+
+    //eventos
+    btn.addEventListener("click", () => {
+      tareaAsync()
+        .then((mensaje) => {
+          console.log(mensaje)
+          caja.textContent = mensaje;
+          caja.style.background = "lightgreen";
+        })
+        .catch((error) => {
+          console.log(error)
+          caja.textContent = error;
+          caja.style.background = "tomato";
+        });
+    });
+
+  </script>
+</body>
+</html>

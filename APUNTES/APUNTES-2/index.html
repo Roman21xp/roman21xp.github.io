@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3</title>
+</head>
+<body>
+    <h1>Ejercicio 3</h1>
+    <h2>suma números</h2>
+    <input type="text" id="numero" placeholder="Pon un número positivo">
+    <button id="boton">Suma</button>
+    <div id="resultado"></div>
+    <script>
+        let num=document.getElementById("numero")
+        let boton=document.getElementById("boton")
+        let resultado=document.getElementById("resultado")
+        let total=0
+        let numeros=[]
+
+
+        function suma (a,b){
+
+            return parseInt(a)+parseInt(b) 
+
+        }
+
+        // Esto hace lo mismo que arriba
+        //const sum=(a,b) => { a+b }
+
+
+        boton.addEventListener("click", (e) => {
+
+            if (num.value>0) {
+             console.log("me han hecho click")
+             numeros.push(num.value)
+             total=suma(total, num.value)
+             resultado.innerHTML=numeros+". Total: "+ total 
+             //resultado.innerHTML=numero.value
+            }
+        })
+ 
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejemplo de localStorage</title>
+</head>
+<body>
+  <h1>Guardar información en el navegador</h1>
+  <input type="text" id="nombre" placeholder="Escribe tu nombre">
+  <input type="button" id="guardar" value="Guardar Nombre">
+  <input type="button" id="mostrar" value="Mostrar Nombre">
+  <input type="button" id="borrar" value="Borrar Nombre">
+  <p id="resultado"></p>
+
+  <script>
+    let nombre = document.getElementById("nombre")
+    let guardar = document.getElementById("guardar")
+    let mostrar = document.getElementById("mostrar")
+    let borrar = document.getElementById("borrar")
+    let resultado = document.getElementById("resultado")
+
+
+    // Botón para guardar el nombre
+    guardar.addEventListener('click', () => {
+      const nombreUsuario = nombre.value // Obtiene el valor del input
+      localStorage.setItem('nombreUsuario', nombreUsuario) // Guarda el nombre en localStorage
+      alert('Nombre guardado en localStorage')
+    })
+    // Botón para guardar el nombre
+    borrar.addEventListener('click', () => {
+      localStorage.removeItem('nombreUsuario') // Guarda el nombre en localStorage
+      resultado.textContent =""
+      alert('Nombre borrado en localStorage')
+    })
+
+    // Botón para mostrar el nombre guardado
+    mostrar.addEventListener('click', () => {
+      const nombreGuardado = localStorage.getItem('nombreUsuario') // Recupera el nombre de localStorage
+      if (nombreGuardado) {
+        resultado.textContent = `Nombre guardado: ${nombreGuardado}`
+      } else {
+        resultado.textContent = 'No hay ningún nombre guardado.'
+      }
+    })
+  </script>
+</body>
+</html>
