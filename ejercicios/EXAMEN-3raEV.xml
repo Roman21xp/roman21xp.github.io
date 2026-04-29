@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tienda>
+    <producto>
+        <disco>
+            <titulo>Joshua tree</titulo>
+            <grupo>U2</grupo>
+            <formato>CD</formato>
+            <id>D1</id>
+            <fecha_comprado>
+                <dia>01</dia>
+                <mes>01</mes>
+                <anyo>2026</anyo>
+            </fecha_comprado>
+        </disco>
+        <disco>
+            <titulo>La venganza de Goku</titulo>
+            <grupo>Akira Toriyama</grupo>
+            <formato>LP</formato>
+            <id>D2</id>
+            <fecha_comprado>
+                <dia>01</dia>
+                <mes>03</mes>
+                <anyo>2026</anyo>
+            </fecha_comprado>
+        </disco>
+        <disco>
+            <titulo>BSO mortadelo y filemón</titulo>
+            <grupo>Ibañez</grupo>
+            <formato>Cassette</formato>
+            <id>D3</id>
+            <fecha_comprado>
+                <dia>01</dia>
+                <mes>04</mes>
+                <anyo>2026</anyo>
+            </fecha_comprado>
+        </disco>
+        <disco>
+            <titulo>BSO Tarzán de niña a mujer</titulo>
+            <grupo>BTS</grupo>
+            <formato>CD</formato>
+            <id>D4</id>
+            <fecha_comprado>
+                <dia>01</dia>
+                <mes>05</mes>
+                <anyo>2026</anyo>
+            </fecha_comprado>
+        </disco>
+        <disco>
+            <titulo>MP, Me Piro</titulo>
+            <grupo>Soy <![CDATA[ > ]]> de edad</grupo>
+            <formato>USB</formato>
+            <id>D5</id>
+            <fecha_comprado>
+                <dia>01</dia>
+                <mes>06</mes>
+                <anyo>2026</anyo>
+            </fecha_comprado>
+        </disco>
+    </producto>
+    <compradores>
+        <cliente>
+            <nombre>María</nombre>
+            <segundo_nombre>Pilar</segundo_nombre>
+            <elementos_prestados>D1</elementos_prestados>
+            <elementos_prestados>D3</elementos_prestados>
+            <fecha_prestamo>
+                <dia>01</dia>
+                <mes>06<mes>
+                <anyo>2026</anyo>
+            </fecha_prestamo>
+            <fecha_prestamo>
+                <dia>02</dia>
+                <mes>06<mes>
+                <anyo>2026</anyo>
+            </fecha_prestamo>
+            <dni>111</dni>
+            <telefono>2323</telefono>
+            <segundo_telefono>121</segundo_telefono>
+        </cliente>
+        <cliente>
+            <nombre>Jose</nombre>
+            <segundo_nombre>María</segundo_nombre>
+            <elementos_prestados>D2</elementos_prestados>
+            <fecha_prestamo>
+                <dia>05</dia>
+                <mes>06<mes>
+                <anyo>2026</anyo>
+            </fecha_prestamo>
+            <dni>222</dni>
+            <telefono>32322</telefono>
+        </cliente>
+        <cliente>
+            <nombre>Adriana</nombre>
+            <elementos_prestados>D4</elementos_prestados>
+            <elementos_prestados>D5</elementos_prestados>
+            <fecha_prestamo>
+                <dia>02</dia>
+                <mes>06<mes>
+                <anyo>2026</anyo>
+            </fecha_prestamo>
+            <fecha_prestamo>
+                <dia>05</dia>
+                <mes>06<mes>
+                <anyo>2026</anyo>
+            </fecha_prestamo>
+            <dni>333</dni>
+            <telefono>33323243</telefono>
+        </cliente>
+    </compradores>
+</tienda>
