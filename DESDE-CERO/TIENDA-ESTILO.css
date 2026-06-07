@@ -1,0 +1,44 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    text-align: center;
+}
+
+/* EL CONTENEDOR FLEX PADRE */
+.contenedor-flex {
+    display: flex;
+    flex-wrap: wrap; /* Permite que las tarjetas salten a la siguiente línea */
+    justify-content: center; /* Centra todo el bloque */
+    gap: 20px; /* Espacio uniforme entre tarjetas */
+    padding: 20px;
+}
+
+/* LOS HIJOS (Las tarjetas) */
+.tarjeta {
+    background: white;
+    width: 250px;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    /* Una tarjeta también puede ser un contenedor Flex internamente */
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    justify-content: space-between;
+}
+
+.tarjeta img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain; /* Para que la imagen no se deforme */
+}
+
+.tarjeta h3 {
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.tarjeta p {
+    font-weight: bold;
+    color: #27ae60;
+}
