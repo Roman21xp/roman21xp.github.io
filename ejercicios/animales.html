@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Examen: Animales Aleatorios</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; background-color: #f4f4f9; }
+        button { padding: 15px 30px; font-size: 1.2rem; cursor: pointer; background-color: #3498db; color: white; border: none; border-radius: 5px; }
+        button:hover { background-color: #2980b9; }
+        #resultado { margin-top: 30px; font-size: 2rem; font-weight: bold; color: #2c3e50; text-transform: capitalize; }
+    </style>
+</head>
+<body>
+
+    <h2>Zoológico Asíncrono</h2>
+    <button id="btnAnimal">Saca un animal</button>
+    <div id="resultado">...</div>
+
+    <script>
+        // CACHÉ LOCAL: Aquí guardaremos los animales para no tener que usar internet dos veces
+        let animalesGuardados = [];
+
+        const boton = document.getElementById("btnAnimal");
+        const resultado = document.getElementById("resultado");
+
+        boton.addEventListener("click", async () => {
+            // Si el array está vacío, es la primera vez. Hacemos el Fetch.
+            if (animalesGuardados.length === 0) {
+                resultado.textContent = "Conectando al servidor...";
+                try {
+                    // EL TRUCO DEL EXAMEN: Cambiamos 'number=1' por 'number=50' 
+                    // para descargar de un solo golpe una lista grande de animales.
+                    const url = "https://random-words-api.kushcreates.com/api?lenguage=es&category=animal&number=50";
+                    const respuesta = await fetch(url);
+                    
+                    if (!respuesta.ok) throw new Error("Error en la llamada a la API");
+                    
+                    // Parseamos el JSON y lo guardamos en nuestra memoria local
+                    // (Asumimos que la API devuelve directamente un array de strings)
+                    animalesGuardados = await respuesta.json();
+                    
+                    console.log("Descarga completada. Animales guardados en memoria:", animalesGuardados.length);
+                } catch (error) {
+                    console.error("Fallo de red:", error);
+                    resultado.textContent = "Error al descargar animales.";
+                    return; 
+                }
+            }
+
+            // Llegados a este punto (ya sea en el primer clic tras cargar, o en los siguientes)
+            // elegimos un animal aleatorio de nuestra memoria local (SIN internet).
+            if (animalesGuardados.length > 0) {
+                // Cálculo de índice aleatorio
+                const indiceAleatorio = Math.floor(Math.random() * animalesGuardados.length);
+                
+                // Imprimimos el animal en pantalla
+                resultado.textContent = animalesGuardados[indiceAleatorio];
+
+                // Lo eliminamos del array para que no vuelva a salir repetido en el próximo clic
+                animalesGuardados.splice(indiceAleatorio, 1);
+            } else {
+                resultado.textContent = "¡Se acabaron los animales! Recarga la página.";
+            }
+        });
+    </script>
+</body>
+</html>
