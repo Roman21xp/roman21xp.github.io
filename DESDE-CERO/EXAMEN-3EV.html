@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; }
+        #resultadoPiramide { margin-top: 20px; font-weight: bold; font-size: 1.2rem; }
+    </style>
+</head>
+<body>
+    <h2>El Reto de la Pirámide</h2>
+    <input type="number" id="inputPiramide" placeholder="Número (ej: 5)">
+    <button id="btnGenerar">Generar</button>
+    <div id="resultadoPiramide"></div>
+        <script>
+        // Enganchamos el evento al botón
+        document.getElementById("btnGenerar").addEventListener("click", () => {
+            
+            // 1. Obtenemos el valor
+            let numero = parseInt(document.getElementById("inputPiramide").value);
+            let piramideHTML = "";
+
+            // 2. Filtro de seguridad
+            if (isNaN(numero) || numero < 1) {
+                document.getElementById("resultadoPiramide").innerHTML = "Pon un número válido, genio.";
+                return; 
+            }
+
+            // 3. El bucle inverso (desde el número hasta 1)
+            for (let i = numero; i >= 1; i--) {
+                // Genera la repetición. Si i es 5, repite "5" 5 veces. Si es 4, repite "4" 4 veces.
+                piramideHTML += String(numero).repeat(i) + "<br>";
+            }
+
+            // 4. Inyección en el DOM
+            document.getElementById("resultadoPiramide").innerHTML = piramideHTML;
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,160 @@
+/** {
+/*    box-sizing: border-box;
+/*    margin: 0;
+/*    padding: 0;
+/*}
+/*
+/*body {
+/*    font-family: Arial, sans-serif;
+/*}
+/*
+/*.container { 
+/*    max-width: 1200px;
+/*    margin: 0 auto;
+/*}
+/*
+/*.menu::after, .articulo::after {
+/*    content: "";
+/*    display: table;
+/*    clear: both;
+/*}
+/*
+/* ------ MENU CON FLOAT --------
+/*
+/*.menu {
+/*    background-color: #f4f4f4;
+/*    padding: 20px;
+/*}
+/*
+/*.menu img {
+/*    float: left;
+/*    margin-top: 150px;
+/*}
+/*
+/*.menu nav {
+/*    float: right;
+/*    margin-top: 15px;
+/*}
+/*
+/*.menu nav ul li {
+/*    float: left;
+/*    list-style: none;
+/*    padding: 0 10px;
+/*}
+/*
+/*.menu nav ul li a {
+/*    text-decoration: none;
+/*    color: #333;
+/*}
+/*
+/* -------- ARTICULOS CON FLOAT ------------
+/*
+/*.articulo {
+/*    margin: 40px 0;
+/*    padding: 0 20px;
+/*}
+/*
+/*.tarjeta-imagen {
+/*    float: left;
+/*    width: 30%;
+/*    padding: 10px;
+/*}
+/*
+/*.tarjeta-imagen img {
+/*    width: 100%;
+/*    height: auto;
+/*    display: block;
+/*}
+/*
+/*.tarjeta-text {
+/*    float: left;
+/*    width: 70%;
+/*    padding: 10px;
+/*    line-height: 1.6;
+/*}
+/*
+/* -------- FOOTER -------
+/*
+/*.footer {
+/*    clear: both;
+/*    background-color: #222;
+/*    color: white;
+/*    text-align: center;
+/*    padding: 20px;
+/*}
+/*
+/* ----------------------------------------------------------------------------------------------------*/
+
+/* OPCION CON FLEXBOX */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* MENU FLEX */
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+.menu img {
+    width: 150px;
+}
+
+.menu nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.menu nav ul li a {
+    text-decoration: none;
+    color: #333;
+}
+
+/*   ARTICULOS   */
+
+.articulo {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin: 40px 20px;
+}
+
+.tarjeta-imagen {
+    width: 30%;
+}
+
+.tarjeta-imagen img {
+    width: 20rem;
+    height: auto;
+    display: block;
+}
+
+.tarjeta-texto {
+    width: 70%;
+    line-height: 1.6;
+}
+
+/* FOOTER */
+
+.footer {
+    background-color: #222;
+    color: white;
+    padding: 20px;
+}
